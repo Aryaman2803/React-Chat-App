@@ -4,7 +4,6 @@ import { defaultValues, validationSchema } from "./formikConfig";
 import { FormField } from "../FormField";
 import { useState } from "react";
 import { fb } from "../../service";
-import { Advertisement } from "semantic-ui-react";
 
 export const Signup = () => {
   const history = useHistory();

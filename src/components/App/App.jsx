@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router";
 import { useAuth, useResolved } from "../../hooks";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { ChatProvider } from "../../context/ChatContext";
 
 export const App = () => {
   const history = useHistory(); // Allows to change the route
@@ -18,13 +19,17 @@ export const App = () => {
     }
   }, [authResolved, authUser, history]);
 
-  return (
-    <div className="app">
-      <Switch>
-        <Route exact path="/" component={Chat} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-      </Switch>
-    </div>
+  return authResolved ? (
+    <ChatProvider authUser={authUser}>
+      <div className="app">
+        <Switch>
+          <Route exact path="/" component={Chat} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
+      </div>
+    </ChatProvider>
+  ) : (
+    <>Loading...</>
   );
 };
