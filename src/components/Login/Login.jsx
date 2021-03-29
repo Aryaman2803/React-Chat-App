@@ -3,13 +3,33 @@ import { defaultValues, validationSchema } from "./formikConfig";
 import { FormField } from "../FormField/FormField";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-
+import { fb } from "../../service";
 export const Login = () => {
   const history = useHistory();
   const [serverError, setServerError] = useState("");
 
-  const login = ({ email }) => {
-    console.log("Loggin In", email);
+  const login = ({ email, password }, { setSubmitting }) => {
+    //Login to firebase and do some error handling
+    fb.auth
+      .signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        if (!res.user) {
+          setServerError(
+            "We're having trouble logging you in. Please try again."
+          );
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err.code === "auth/wrong-password") {
+          setServerError("Invalid credentials");
+        } else if (err.code === "auth/user-not-found") {
+          setServerError("No account for this email");
+        } else {
+          setServerError("Something went wrong");
+        }
+      })
+      .finally(() => setSubmitting(false));
   };
   return (
     <div className="auth-form">
