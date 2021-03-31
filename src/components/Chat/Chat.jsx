@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useChat } from "../../context/ChatContext";
 import { getChats, ChatEngine } from "react-chat-engine";
+import { LeftRail } from "../LeftRail";
 //*We hook the Chat Engine here
 export const Chat = () => {
   const { myChats, setMyChats, chatConfig, selectedChat } = useChat();
@@ -10,6 +11,7 @@ export const Chat = () => {
   }, [myChats]);
   return (
     <>
+      <LeftRail />
       {/* If chatConfig exists then we render the ChatEngine */}
       {!!chatConfig && (
         <ChatEngine

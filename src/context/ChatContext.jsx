@@ -21,7 +21,7 @@ export const ChatProvider = ({ children, authUser }) => {
 
   //* Delete the Chat if its admin then Delete the Chat otherwise leave the chat
   const deleteChatClick = (chat) => {
-    const isAdmin = chat.admin === chatConfig.userName;
+    const isAdmin = chat.admin.username === chatConfig.userName;
     if (
       isAdmin &&
       window.confirm("Are you sure you want to delete this chat?")

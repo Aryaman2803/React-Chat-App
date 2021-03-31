@@ -4,7 +4,7 @@ import { useAuth, useResolved } from "../../hooks";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { ChatProvider } from "../../context/ChatContext";
-
+import  'semantic-ui-css/semantic.min.css'
 export const App = () => {
   const history = useHistory(); // Allows to change the route
   const { authUser } = useAuth();
