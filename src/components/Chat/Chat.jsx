@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useChat } from "../../context/ChatContext";
 import { getChats, ChatEngine } from "react-chat-engine";
 import { LeftRail } from "../LeftRail";
+import { ChatToolbar } from "../ChatToolbar";
 //*We hook the Chat Engine here
 export const Chat = () => {
   const { myChats, setMyChats, chatConfig, selectedChat } = useChat();
@@ -32,7 +33,9 @@ export const Chat = () => {
       <div className="chat-container">
         <div className="current-chat">
           {selectedChat ? (
-            <> </>
+            <div className="chat">
+              <ChatToolbar />
+            </div>
           ) : (
             <div className="no-chat-selected">
               <img
