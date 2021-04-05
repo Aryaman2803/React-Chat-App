@@ -32,7 +32,6 @@ export const ChatInput = () => {
     <>
       <div className="chat-controls">
         <div
-          className="attachment-icons"
           onClick={() => {
             const input = inputRef.current;
             if (input) {
