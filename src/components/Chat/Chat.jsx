@@ -82,7 +82,8 @@ export const Chat = () => {
             setMyChats(
               [updatedChat, ...filteredChats].sort((a, b) => a.id - b.id)
             );
-          }}
+          }} 
+          
         />
       )}
       <div className="chat-container">
