@@ -21,6 +21,8 @@ To see the app in action, go to- https://react-chat-app-aryaman2803.vercel.app/l
 5. Now you can chat the the user. 
 
 # App Screenshot
+
+<img src="https://github.com/Aryaman2803/React-Chat-App/blob/master/img/0.PNG?raw=true" width="70%" >
 <img src="https://github.com/Aryaman2803/React-Chat-App/blob/master/img/1.PNG?raw=true" width="70%" >
 <img src="https://github.com/Aryaman2803/React-Chat-App/blob/master/img/2.PNG?raw=true" width="70%" >
 <img src="https://github.com/Aryaman2803/React-Chat-App/blob/master/img/3.PNG?raw=true" width="90%" >
