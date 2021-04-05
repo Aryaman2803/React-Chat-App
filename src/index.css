@@ -7,10 +7,14 @@
   --font-family-3: "Source Sans Pro", sans-serif;
   --background-color-0: #222222;
 
+  /* Form */
+  --app-container-bg: #f2f2f2;
+  --auth-form-bg: #fff;
+  --auth-form-color: #0a0a16;
+
   /* Current Username Box */
   --current-username-bg-color: #0a0a16;
   --current-username-text-color: #e5e5e5;
-  
 
   /* Chat List Contaiener */
   --chat-list-single-single-user-text-color: #e5e5e5;
@@ -18,16 +22,16 @@
   --chat-list-container: #0a0a16;
 
   /* Create Chat Button */
-  --button-color: #6F23E1;
-  /* --button-color: linear-gradient(to right, #7f40ec, #983cf2, #a539f7, #b538f7); */
+  /* --button-color: #6f23e1; */
+  --button-color: linear-gradient(to right, #7f40ec, #983cf2, #a539f7, #b538f7);
 
   --text-color: #e5e5ee;
 
   /* Chat Header */
   --chat-header-text: #e5e5e5;
-  --chat-container-background: #e5e5e5;
-  /* --chat-toolbar: linear-gradient(to right, #7f40ec, #983cf2, #a539f7, #b538f7); */
-  --chat-toolbar: #6F23E1;
+  --chat-container-background: white;
+  --chat-toolbar: linear-gradient(to right, #7f40ec, #983cf2, #a539f7, #b538f7);
+  /* --chat-toolbar: #6f23e1; */
   --eror-color: red;
 
   /* Chat Input Box */
@@ -60,12 +64,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--app-container-bg);
 }
 
 .error {
   color: var(--eror-color);
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .auth-form {
@@ -73,19 +78,22 @@ body {
   padding: 2rem;
   max-width: 100%;
   border-radius: 0.8rem;
-  box-shadow: 0px 0px 10px black;
-  background-color: #40394a;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  color: var(--auth-form-color);
+  background-color: var(--auth-form-bg);
   font-family: var(--font-family-2);
 }
 .auth-form h1 {
   margin-top: 3rem;
   font-size: 2.3rem;
   letter-spacing: 2px;
+  color: #343434;
 }
 .auth-form label {
   display: block;
   margin-bottom: 1.5rem;
   letter-spacing: 1.5px;
+  color: #4d4b4b;
 }
 
 .auth-form input {
@@ -105,15 +113,27 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   letter-spacing: 1.2px;
-  color: #40394a;
+  color: var(--auth-form-bg);
+  background-image: var(--button-color);
   margin-top: 2.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+.auth-form button:hover {
+  opacity: 0.8;
+}
+.auth-link-text{
+  color: #4d4b4b;
+  letter-spacing: 1px;
 }
 .auth-link {
   cursor: pointer;
-  color: gray;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1.3px;
 }
 .auth-link:hover {
-  color: #2d2a30;
+  opacity: 0.8;
 }
 
 .chat-container {
@@ -125,6 +145,9 @@ body {
   flex: 1;
   height: 100%;
   display: flex;
+  border-top: 6px solid #030a24;
+  border-bottom: 1px solid #030a24;
+  border-right: 6px solid #030a24;
   justify-content: center;
   background-color: var(--chat-container-background);
 }
@@ -137,8 +160,7 @@ body {
   font-size: 28px;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0px 0px 3px black;
-  background-color: #2e3247;
+  /* box-shadow: 0px 0px 3px black; */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -196,7 +218,7 @@ body {
   border: none;
   outline: none;
   color: var(--text-color);
-  background-color: var(--button-color);
+  background-image: var(--button-color);
   cursor: pointer;
   border-radius: 0px;
   transition: all 0.3s;
@@ -274,7 +296,7 @@ body {
   padding-left: 25px;
   padding-right: 25px;
   align-items: center;
-  background-color: var(--chat-toolbar);
+  background-image: var(--chat-toolbar);
   justify-content: space-between;
 }
 .chat-header-text {

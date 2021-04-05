@@ -45,7 +45,7 @@ export const Login = () => {
             <FormField name="email" label="Email" type="email" />
             <FormField name="password" label="Password" type="password" />
 
-            <div>
+            <div className='auth-link-text'>
               Don't have an account?{" "}
               <span
                 className="auth-link"
