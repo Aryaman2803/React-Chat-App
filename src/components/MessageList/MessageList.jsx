@@ -15,6 +15,7 @@ useScrollToBottom(selectedChat,'chat-messages')
               <ChatAvatar
                 className="message-avatar"
                 username={m[0].sender.username}
+                
                 chat={selectedChat}
               />
               <div className="message-author">{m[0].sender.username}</div>
