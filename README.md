@@ -2,7 +2,7 @@
 
 
 
-To see the app in action, go to- https://react-chat-app-aryaman2803.vercel.app/login
+To see the app in action, go to- https://hyperstream.vercel.app/
 <ins></ins>
 
 ## Features
