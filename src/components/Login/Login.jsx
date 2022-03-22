@@ -61,6 +61,10 @@ export const Login = () => {
         )}
       </Formik>
       {!!serverError && <div className="error">{serverError}</div>}
+       <b>Username 1:</b> <em style={{marginRight:'2rem'}}>testuser@gmail.com</em> 
+      <b>Password:</b> <em>testuser</em><br/>
+      <b>Username 1:</b> <em style={{marginRight:'2rem'}}>qwerty@gmail.com</em> 
+      <b>Password:</b> <em>12345678</em>
     </div>
   );
 };
